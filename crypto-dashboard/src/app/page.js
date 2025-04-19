@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { getTopCoins } from '@/utils/api';
 import CoinCard from '@/components/CoinCard';
+import SearchBar from '@/components/SearchBar';
 
 export default function Home() {
 
@@ -10,6 +11,7 @@ export default function Home() {
   const [coins, setCoins] = useState([]);
   //loading state for waiting data
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     async function fetchCoins() {
