@@ -34,7 +34,8 @@ export default function Home() {
   return (
     <main>
       <h1>Crypto Dashboard</h1>
-      {coins.map((coin) => (
+      <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm}/>
+      {filteredCoins.map((coin) => (
         <CoinCard key={coin.id} coin={coin}/>
       ))}
     </main>
