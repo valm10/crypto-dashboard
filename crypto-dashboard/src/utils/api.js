@@ -7,3 +7,23 @@ const api = axios.create({
 });
 
 export default api;
+
+//get Top 10 coins by market cap in eur
+export async function getTopCoins() {
+    try {
+        const response = await api.get('/coins/markets', {
+            params: {
+                vs_currency: 'eur',
+                order: 'market_cap_desc',
+                per_page: 10,
+                page: 1,
+            },
+        });
+
+        return response.data
+    } catch (error) {
+        console.error('Error fetching top coins:', error);
+        throw error;
+    }
+    
+}
