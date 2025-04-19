@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-
+import styles from './page.module.css';
 import { getTopCoins } from '@/utils/api';
 
 export default function Home() {
@@ -33,14 +33,7 @@ export default function Home() {
     <main>
       <h1>Crypto Dashboard</h1>
       {coins.map((coin) => (
-        <div key={coin.id}
-        style={{
-          border: '3px solid #ccc',
-          borderRadius: '8px',
-          padding: '1rem',
-          marginBottom: '1rem',
-          maxWidth: '400px',
-          }}>
+        <div key={coin.id} className={styles.card}>
             <img src={coin.image} alt={coin.name} width={32} height={32}/>
 
             <h2>
