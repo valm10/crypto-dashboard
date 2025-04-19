@@ -30,7 +30,7 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <main>
       <h1>Crypto Dashboard</h1>
       <ul>
         {coins.map((coin) => (
@@ -39,6 +39,6 @@ export default function Home() {
           </li>
         ))}
       </ul>
-    </div>
+    </main>
   );
 }
