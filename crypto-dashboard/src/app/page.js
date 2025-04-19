@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { getTopCoins } from '@/utils/api';
 import CoinCard from '@/components/CoinCard';
 import SearchBar from '@/components/SearchBar';
+import styles from './globals.css';
 
 export default function Home() {
 
@@ -41,9 +42,11 @@ export default function Home() {
     <main>
       <h1>Crypto Dashboard</h1>
       <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm}/>
+      <div className="coin-grid">
       {filteredCoins.map((coin) => (
         <CoinCard key={coin.id} coin={coin}/>
       ))}
+      </div>
     </main>
   );
 }

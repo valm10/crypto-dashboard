@@ -13,7 +13,6 @@ function CoinCard({ coin }) {
             <p>🔁 Volume: €{coin.total_volume.toLocaleString()}</p>
             <p>📊 Rank: #{coin.market_cap_rank}</p>
             <p>🪙 Supply: {coin.circulating_supply.toLocaleString()}</p>
-            {/* Graph placeholder */}
             <MiniChart sparkline={coin.sparkline_in_7d.price} />
         </div>
     );
