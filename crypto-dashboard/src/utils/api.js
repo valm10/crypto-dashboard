@@ -17,6 +17,7 @@ export async function getTopCoins() {
                 order: 'market_cap_desc',
                 per_page: 10,
                 page: 1,
+                sparkline: true,
             },
         });
 
