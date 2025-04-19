@@ -14,7 +14,7 @@ function CoinCard({ coin }) {
             <p>📊 Rank: #{coin.market_cap_rank}</p>
             <p>🪙 Supply: {coin.circulating_supply.toLocaleString()}</p>
             {/* Graph placeholder */}
-            <p style={{ color: '#999' }}>📉 Sparkline: [Coming soon]</p>
+            <MiniChart sparkline={coin.sparkline_in_7d.price} />
         </div>
     );
 }
