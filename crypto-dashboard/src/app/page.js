@@ -32,13 +32,28 @@ export default function Home() {
   return (
     <main>
       <h1>Crypto Dashboard</h1>
-      <ul>
-        {coins.map((coin) => (
-          <li key={coin.id}>
-            {coins.name} - €{coin.current_price}
-          </li>
-        ))}
-      </ul>
+      {coins.map((coin) => (
+        <div key={coin.id}
+        style={{
+          border: '3px solid #ccc',
+          borderRadius: '8px',
+          padding: '1rem',
+          marginBottom: '1rem',
+          maxWidth: '400px',
+          }}>
+            <img src={coin.image} alt={coin.name} width={32} height={32}/>
+
+            <h2>
+              {coin.name} ({coin.symbol.toUpperCase()})
+            </h2>
+            <p>💰 Price: €{coin.current_price}</p>
+            <p>📈 24h Change: {coin.price_change_percentage_24h?.toFixed(2)}%</p>
+            <p>🏦 Market Cap: €{coin.market_cap.toLocaleString()}</p>
+            <p>🔁 Total Volume: €{coin.total_volume.toLocaleString()}</p>
+            <p>📊 Rank: #{coin.market_cap_rank}</p>
+            <p>🪙 Supply: {coin.circulating_supply.toLocaleString()}</p>
+        </div>
+      ))}
     </main>
   );
 }
