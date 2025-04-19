@@ -23,3 +23,42 @@ ChartJS.register(
     Tooltip,
     Legend
   );
+
+  function MiniChart({ sparkline }) {
+    const labels = sparkline.map((_, i) => i);
+
+    const data = {
+        labels,
+        datasets: [
+            {
+                label: '7d Price',
+                data: sparkline,
+                borderColor: '#3b82f6',
+                backgroundColor: 'transparent',
+                tension: 0.3,
+                pointRadius: 0,
+            },
+        ],
+    };
+
+    const options = {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            x: { display: false },
+            y: { display: false },
+        },
+        plugins: {
+        legend: { display: false },
+        tooltip: { enabled: false },
+    },
+  };
+
+  return (
+    <div style={{ height: '50px', width: '100%' }}>
+        <Line data={data} options={options} />
+    </div>
+  );
+}
+
+export default MiniChart;
