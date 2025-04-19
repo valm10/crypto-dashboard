@@ -12,6 +12,9 @@ export default function Home() {
   //loading state for waiting data
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
+  const filteredCoins = coins.filter((coin) =>
+  coin.name.toLowerCase().includes(searchTerm.toLowerCase())
+);
 
   useEffect(() => {
     async function fetchCoins() {
