@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import styles from './page.module.css';
 import { getTopCoins } from '@/utils/api';
 import CoinCard from '@/components/CoinCard';
 
