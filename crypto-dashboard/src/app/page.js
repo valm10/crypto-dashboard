@@ -20,7 +20,6 @@ export default function Home() {
     );
   });
 
-  useEffect(() => {
     async function fetchCoins() {
       try {
         const data = await getTopCoins();
@@ -31,6 +30,8 @@ export default function Home() {
         setLoading(false);
       }
     }
+
+    useEffect(() => {
     fetchCoins();
 
     //60 seconds interval
