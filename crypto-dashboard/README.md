@@ -1,6 +1,6 @@
 # 🪙 Crypto Dashboard
 
-A clean, responsive dashboard that displays live cryptocurrency market data using the CoinGecko API. Built with **Next.js**, **React**, and **Axios**.
+Responsive dashboard that displays live cryptocurrency market data using the CoinGecko API. Built with **Next.js**, **React**, and **Axios**.
 
 ## 📸 Preview
 
@@ -9,10 +9,10 @@ A clean, responsive dashboard that displays live cryptocurrency market data usin
 ## 🚀 Features
 
 - 🔄 Live crypto prices for the top 10 coins
-- 🔍 Real-time search by name or symbol
-- 📈 Mini chart showing 7-day price trends
-- 🔁 Auto-refresh every 60 seconds + manual refresh
-- 📱 Simple and clean UI, ready for future responsiveness
+- 🔍 Real time search by name or symbol
+- 📈 Mini chart showing 7 day price trends
+- 🔁 Auto-refresh every 60 seconds + button refresh
+- 📱 Simple and clean UI
 - ✅ Built with components and clean project structure
 - 🧪 Unit testing with Jest + React Testing Library
 
