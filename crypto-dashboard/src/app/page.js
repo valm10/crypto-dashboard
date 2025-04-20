@@ -26,6 +26,7 @@ export default function Home() {
       try {
         const data = await getTopCoins();
         setCoins(data);
+        setLastUpdated(new Date());
       } catch (error) {
         console.error("Failed to fetch coins:", error);
       } finally {
