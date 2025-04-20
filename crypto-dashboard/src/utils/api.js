@@ -11,7 +11,7 @@ export default api;
 //get Top 10 coins by market cap in eur
 export async function getTopCoins() {
     try {
-        const response = await api.get('/coins/markets', {
+        const response = await api.get('https://api.coingecko.com/api/v3/coins/markets', {
             params: {
                 vs_currency: 'eur',
                 order: 'market_cap_desc',
