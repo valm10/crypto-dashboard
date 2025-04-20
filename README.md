@@ -4,7 +4,7 @@ Responsive dashboard that displays live cryptocurrency market data using the Coi
 
 ## 📸 Preview
 
-![screenshot](public/screenshot.png) <!-- You can add a screenshot here -->
+![screenshot](crypto-dashboard/public/screenshot.png)
 
 ## 🚀 Features
 
@@ -37,3 +37,7 @@ npm install
 # Start the dev server
 npm run dev
 ```
+
+### 💼 Built by [valm10](https://github.com/valm10)
+
+This project is part of my portfolio. Feedback is welcome!
