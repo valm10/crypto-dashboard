@@ -55,7 +55,7 @@ export default function Home() {
         </button>
 
         {lastUpdated && (
-          <span>
+          <span className="last-updated">
             Last Updated: {lastUpdated.toLocaleTimeString()}
           </span>
         )}

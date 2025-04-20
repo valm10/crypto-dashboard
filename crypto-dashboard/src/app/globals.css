@@ -21,3 +21,19 @@ h1 {
   font-size: 0.9rem;
   transition: background-color 0.2s ease;
 }
+
+.refresh-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.refresh-button:hover {
+  background-color: #0059c1;
+}
+
+.last-updated {
+  font-size: 0.85rem;
+  color: #666;
+}
