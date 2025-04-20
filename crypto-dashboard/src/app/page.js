@@ -32,6 +32,13 @@ export default function Home() {
       }
     }
     fetchCoins();
+
+    //60 seconds interval
+    const intervalId = setInterval(() => {
+      fetchCoins();
+    }, 60000);
+  
+  return () => clearInterval(IntervalId);
   }, []);
 
   if (loading) {
