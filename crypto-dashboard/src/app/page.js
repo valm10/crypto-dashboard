@@ -50,6 +50,12 @@ export default function Home() {
         <button onClick={fetchCoins} className='refresh-button'>
           Refresh Coins
         </button>
+
+        {lastUpdated && (
+          <span>
+            Last Updated: {lastUpdated.toLocaleTimeString()}
+          </span>
+        )}
       </div>
       <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm}/>
       <div className="coin-grid">
