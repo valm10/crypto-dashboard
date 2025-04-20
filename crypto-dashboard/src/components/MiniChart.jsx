@@ -44,6 +44,7 @@ ChartJS.register(
     const options = {
         responsive: true,
         maintainAspectRatio: false,
+        animation: false,
         scales: {
             x: { display: false },
             y: { display: false },
