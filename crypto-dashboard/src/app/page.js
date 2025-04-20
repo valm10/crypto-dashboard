@@ -35,11 +35,8 @@ export default function Home() {
     fetchCoins();
 
     //60 seconds interval
-    const interval = setInterval(() => {
-      fetchCoins();
-    }, 60000);
-  
-  return () => clearInterval(interval);
+    const interval = setInterval(fetchCoins,6000);
+    return () => clearInterval(interval); //cleanup
   }, []);
 
   if (loading) {
@@ -49,6 +46,11 @@ export default function Home() {
   return (
     <main>
       <h1>Crypto Dashboard</h1>
+      <div>
+        <button onClick={fetchCoins} className='refresh-button'>
+          Refresh Coins
+        </button>
+      </div>
       <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm}/>
       <div className="coin-grid">
       {filteredCoins.map((coin) => (
