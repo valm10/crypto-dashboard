@@ -13,6 +13,8 @@ export default function Home() {
   //loading state for waiting data
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
+  //declare lastUpdate
+  const [lastUpdated, setLastUpdated] = useState(null);
   const filteredCoins = coins.filter((coin) => {
     const term = searchTerm.toLowerCase();
     return (
