@@ -4,7 +4,7 @@ Responsive dashboard that displays live cryptocurrency market data using the Coi
 
 ## 📸 Preview
 
-![screenshot](public/screenshot.png) <!-- You can add a screenshot here -->
+![screenshot](crypto-dashboard/public/screenshot.png) <!-- You can add a screenshot here -->
 
 ## 🚀 Features
 
