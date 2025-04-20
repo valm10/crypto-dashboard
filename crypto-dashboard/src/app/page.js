@@ -38,7 +38,7 @@ export default function Home() {
     fetchCoins();
 
     //60 seconds interval
-    const interval = setInterval(fetchCoins,6000);
+    const interval = setInterval(fetchCoins,60000);
     return () => clearInterval(interval); //cleanup
   }, []);
 
