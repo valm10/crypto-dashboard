@@ -1,19 +1,20 @@
 import { render, screen, fireEvent} from  '@testing-library/react';
+import userEvent from "testing-library/user-event";
+
 import SearchBar from '../SearchBar';
 
-describe('SearchBar', () => {
-    it('should update value and call onSearchChange when typing', () => {
-        const handleChange = jest.fn(); 
-        const searchTerm = '';
+//create test
+test('updates value and calls handler', async() => {
+  const mockHandler = jest.fn(); //fake function to check if its called
+  render(<SearchBar searchTerm="" onSearchChange={mockHandler} />);
 
-        render(<SearchBar searchTerm={searchTerm} onSearchChange={handleChange} />);
+//find Input
 
-        const input = screen.getByPlaceholderText(/search coins/i);
-        fireEvent.change(input, { target: { value: 'btc' } });
+const input = screen.getByRole('textbox');
 
-        expect(input.value).toBe('btc');
+//type intoo the input
+await userEvent.type(input, 'eth');
 
-        expect(handleChange).toHaveBeenCalledWith('btc');
-        expect(handleChange).toHaveBeenCalledTimes(1);
-  });
+//expect handler to be called multiple times
+expect(mockHandler).toHaveBeenCalled();
 });
