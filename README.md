@@ -1,4 +1,4 @@
-# 🪙 Crypto Dashboard
+# Crypto Dashboard
 
 Responsive dashboard that displays live cryptocurrency market data using the CoinGecko API. Built with **Next.js**, **React**, and **Axios**.
 
