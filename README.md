@@ -24,7 +24,7 @@ Responsive dashboard that displays live cryptocurrency market data using the Coi
 - [Chart.js](https://www.chartjs.org/)
 - [CoinGecko API](https://www.coingecko.com/en/api)
 
-## 🧑‍💻 Getting Started
+## 🧑‍💻 Setup
 
 ```bash
 # Clone the repo
