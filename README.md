@@ -6,7 +6,7 @@ Responsive dashboard that displays live cryptocurrency market data using the Coi
 
 ![screenshot](crypto-dashboard/public/screenshot.png)
 
-## 🚀 Features
+## Features
 
 - 🔄 Live crypto prices for the top 10 coins
 - 🔍 Real time search by name or symbol
@@ -16,7 +16,7 @@ Responsive dashboard that displays live cryptocurrency market data using the Coi
 - ✅ Built with components and clean project structure
 - 🧪 Unit testing with Jest + React Testing Library
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - [Next.js](https://nextjs.org/)
 - [React](https://react.dev/)
@@ -24,7 +24,7 @@ Responsive dashboard that displays live cryptocurrency market data using the Coi
 - [Chart.js](https://www.chartjs.org/)
 - [CoinGecko API](https://www.coingecko.com/en/api)
 
-## 🧑‍💻 Getting Started
+## 🧑‍💻 Setup
 
 ```bash
 # Clone the repo
