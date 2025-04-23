@@ -1,43 +1,38 @@
-# Crypto Dashboard
+title: "💰 Crypto Dashboard"
+description: "A clean and responsive dashboard to track real-time cryptocurrency data."
+demo_image: "assets/demo.png"
 
-Responsive dashboard that displays live cryptocurrency market data using the CoinGecko API. Built with **Next.js**, **React**, and **Axios**.
+features:
 
-## 📸 Preview
+- "Real-time cryptocurrency tracking"
+- "Search functionality"
+- "Responsive and modern UI"
+- "Unit tested components with Jest"
 
-![screenshot](crypto-dashboard/public/screenshot.png)
+built_with:
 
-## Features
+- Next.js
+- JavaScript
+- Axios
+- CoinGecko API
+- Jest
 
-- 🔄 Live crypto prices for the top 10 coins
-- 🔍 Real time search by name or symbol
-- 📈 Mini chart showing 7 day price trends
-- 🔁 Auto-refresh every 60 seconds + button refresh
-- 📱 Simple and clean UI
-- ✅ Built with components and clean project structure
-- 🧪 Unit testing with Jest + React Testing Library
+installation:
+prerequisites: - Node.js - npm
+steps: - git clone https://github.com/valm10/crypto-dashboard.git - cd crypto-dashboard - npm install - npm run dev
 
-## Tech Stack
+test_command: "npm run test"
 
-- [Next.js](https://nextjs.org/)
-- [React](https://react.dev/)
-- [Axios](https://axios-http.com/)
-- [Chart.js](https://www.chartjs.org/)
-- [CoinGecko API](https://www.coingecko.com/en/api)
+roadmap:
 
-## 🧑‍💻 Setup
+- "Live price tracking"
+- "Chart integration with historical data"
+- "User customization for favorite coins" upcoming...
+- "Dark mode toggle" upcoming...
 
-```bash
-# Clone the repo
-git clone https://github.com/valm10/crypto-dashboard.git
-cd crypto-dashboard
+license: MIT
 
-# Install dependencies
-npm install
-
-# Start the dev server
-npm run dev
-```
-
-### 💼 Built by [valm10](https://github.com/valm10)
-
-This project is part of my portfolio.
+contact:
+name: valm10
+github: https://github.com/valm10
+email: your.email@example.com
