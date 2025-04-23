@@ -14,7 +14,7 @@
 
 ## 📌 About The Project
 
-![Crypto Dashboard Screenshot](.public/screenshot.png)
+![Crypto Dashboard Screenshot](/public/screenshot.png)
 
 The **Crypto Dashboard** is a real time web app that allows users to track the price, ranking, and market cap of cryptocurrencies using live data from CoinGecko. The interface is clean, responsive, and beginner-friendly.
 
