@@ -24,4 +24,15 @@ describe("CoinCard component", () => {
       };
   
       render(<CoinCard coin={fakeCoin} />);
+      expect(screen.getByText(/Bitcoin/i)).toBeInTheDocument();
+      expect(screen.getByText(/\(BTC\)/i)).toBeInTheDocument();
+      expect(screen.getByText(/Price: €50000/)).toBeInTheDocument();
+      expect(screen.getByText(/24h Change: 2.35%/)).toBeInTheDocument();
+      expect(screen.getByText(/Market Cap: €1,000,000,000/)).toBeInTheDocument();
+      expect(screen.getByText(/Volume: €300,000,000/)).toBeInTheDocument();
+      expect(screen.getByText(/Rank: #1/)).toBeInTheDocument();
+      expect(screen.getByText(/Supply: 19,000,000/)).toBeInTheDocument();
+      expect(screen.getByTestId("mock-chart")).toBeInTheDocument();
+    });
+  });
   
