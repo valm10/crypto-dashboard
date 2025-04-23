@@ -1,38 +1,100 @@
-title: "💰 Crypto Dashboard"
-description: "A clean and responsive dashboard to track real-time cryptocurrency data."
-demo_image: "assets/demo.png"
+<br />
+<p align="center">
+  <h3 align="center">Crypto Dashboard</h3>
 
-features:
+  <p align="center">
+    A clean and responsive dashboard to track real-time cryptocurrency data.
+    <br />
+    <a href="https://github.com/valm10/crypto-dashboard"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="#">View Demo</a>
+    ·
+    <a href="https://github.com/valm10/crypto-dashboard/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/valm10/crypto-dashboard/issues">Request Feature</a>
+  </p>
+</p>
 
-- "Real-time cryptocurrency tracking"
-- "Search functionality"
-- "Responsive and modern UI"
-- "Unit tested components with Jest"
+---
 
-built_with:
+## 📌 About The Project
 
-- Next.js
-- JavaScript
-- Axios
-- CoinGecko API
-- Jest
+![Crypto Dashboard Screenshot](public/screenshot.png)
 
-installation:
-prerequisites: - Node.js - npm
-steps: - git clone https://github.com/valm10/crypto-dashboard.git - cd crypto-dashboard - npm install - npm run dev
+The **Crypto Dashboard** is a real time web app that allows users to track the price, ranking, and market cap of cryptocurrencies using live data from CoinGecko. The interface is clean, responsive, and beginner-friendly.
 
-test_command: "npm run test"
+### ✅ Features
 
-roadmap:
+- Real-time cryptocurrency tracking
+- Search functionality
+- Responsive and modern UI
+- Clean project structure and reusable components
+- Unit tested components with Jest
 
-- "Live price tracking"
-- "Chart integration with historical data"
-- "User customization for favorite coins" upcoming...
-- "Dark mode toggle" upcoming...
+### 🛠️ Built With
 
-license: MIT
+- [Next.js](https://nextjs.org/)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Axios](https://axios-http.com/)
+- [CoinGecko API](https://www.coingecko.com/)
+- [Jest](https://jestjs.io/)
 
-contact:
-name: valm10
-github: https://github.com/valm10
-email: your.email@example.com
+---
+
+## 🚀 Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+- Node.js and npm installed
+
+### Installation
+
+1. Clone the repo
+
+   ```bash
+   git clone https://github.com/valm10/crypto-dashboard.git
+   cd crypto-dashboard
+   ```
+
+2. Install NPM packages
+
+```bash
+npm install
+```
+
+3. Run the app
+
+```bash
+npm run dev
+```
+
+### 🧪 Testing
+
+To run unit tests:
+
+```bash
+npm run test
+```
+
+### 📈 Roadmap
+
+- Live price tracking
+
+- Chart integration with historical data
+
+- User customization for favorite coins/upcoming
+
+- Dark mode toggle/upcoming
+
+### 📜License
+
+Distributed under the MIT License. See LICENSE for more information.
+
+### 🙋‍♂️ Contact
+
+Your Name – @valm10 – your.email@example.com
+
+Project Link: https://github.com/valm10/crypto-dashboard
