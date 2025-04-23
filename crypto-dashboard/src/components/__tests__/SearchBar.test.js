@@ -19,5 +19,12 @@ test("renders the search input", () => {
   
     expect(mockHandler).toHaveBeenCalledWith("bitcoin");
   });
+  //check initial value
+  test("input displays the current searchTerm", () => {
+    render(<SearchBar searchTerm="eth" onSearchChange={() => {}} />);
+    const input = screen.getByPlaceholderText(/search coin/i);
+  
+    expect(input.value).toBe("eth");
+  });
   
   
