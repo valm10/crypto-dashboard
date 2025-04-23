@@ -1,6 +1,8 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import MiniChart from "../MiniChart";
+import '@testing-library/jest-dom';
+
 
 //mock of line component 
 jest.mock("react-chartjs-2", () => ({

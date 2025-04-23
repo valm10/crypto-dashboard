@@ -1,6 +1,8 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import SearchBar from '../SearchBar';
+import '@testing-library/jest-dom';
+
 
 //render and check if input is on the screen
 test('renders the search input', () => {
