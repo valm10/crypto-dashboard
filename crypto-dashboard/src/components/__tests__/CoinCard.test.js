@@ -22,7 +22,7 @@ describe("CoinCard component", () => {
           price: [100, 200, 300, 400, 500]
         },
       };
-  
+      //assert render for coincard
       render(<CoinCard coin={fakeCoin} />);
       expect(screen.getByText(/Bitcoin/i)).toBeInTheDocument();
       expect(screen.getByText(/\(BTC\)/i)).toBeInTheDocument();
