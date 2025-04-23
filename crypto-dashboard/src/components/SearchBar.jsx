@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "./components.module.css";
 
+//search input to filter coins
 function SearchBar({ searchTerm, onSearchChange }) {
   return (
     <div>
       <label htmlFor="search" className={styles.searchLabel}></label>
       <input
-        input="search"
+        id="search"
         type="text"
         placeholder="Search coin..."
         className={styles.searchInput}

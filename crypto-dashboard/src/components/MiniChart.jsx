@@ -10,7 +10,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-
+//register needed chart parts
 ChartJS.register(
   LineElement,
   PointElement,
@@ -21,22 +21,23 @@ ChartJS.register(
 );
 
 function MiniChart({ sparkline }) {
+  //create fake x-axis labels
   const labels = sparkline.map((_, i) => i);
-
+  //chart data configuration
   const data = {
     labels,
     datasets: [
       {
         label: "7d Price",
         data: sparkline,
-        borderColor: "#3b82f6",
+        borderColor: "#3b82f6", //blue line
         backgroundColor: "transparent",
-        tension: 0.3,
-        pointRadius: 0,
+        tension: 0.3, //line curved
+        pointRadius: 0, //hide points
       },
     ],
   };
-
+  //chart appearance options
   const options = {
     responsive: true,
     maintainAspectRatio: false,
