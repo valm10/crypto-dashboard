@@ -8,4 +8,16 @@ test("renders the search input", () => {
     const input = screen.getByPlaceholderText(/search coin/i);
     expect(input).toBeInTheDocument();
   });
+  //simulate typing in input
+  test("calls onSearchChange when input changes", () => {
+    const mockHandler = jest.fn();
+  
+    render(<SearchBar searchTerm="" onSearchChange={mockHandler} />);
+  
+    const input = screen.getByPlaceholderText(/search coin/i);
+    fireEvent.change(input, { target: { value: "bitcoin" } });
+  
+    expect(mockHandler).toHaveBeenCalledWith("bitcoin");
+  });
+  
   
