@@ -1,5 +1,5 @@
-import React from "react";
-import { Line } from "react-chartjs-2";
+import React from 'react';
+import { Line } from 'react-chartjs-2';
 
 import {
   Chart as ChartJS,
@@ -9,7 +9,7 @@ import {
   CategoryScale,
   Tooltip,
   Legend,
-} from "chart.js";
+} from 'chart.js';
 //register needed chart parts
 ChartJS.register(
   LineElement,
@@ -28,10 +28,10 @@ function MiniChart({ sparkline }) {
     labels,
     datasets: [
       {
-        label: "7d Price",
+        label: '7d Price',
         data: sparkline,
-        borderColor: "#3b82f6", //blue line
-        backgroundColor: "transparent",
+        borderColor: '#3b82f6', //blue line
+        backgroundColor: 'transparent',
         tension: 0.3, //line curved
         pointRadius: 0, //hide points
       },
@@ -53,7 +53,7 @@ function MiniChart({ sparkline }) {
   };
 
   return (
-    <div style={{ height: "50px", width: "100%" }}>
+    <div style={{ height: '50px', width: '100%' }}>
       <Line data={data} options={options} />
     </div>
   );

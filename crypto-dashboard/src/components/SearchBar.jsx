@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./components.module.css";
+import React from 'react';
+import styles from './components.module.css';
 
 //search input to filter coins
 function SearchBar({ searchTerm, onSearchChange }) {

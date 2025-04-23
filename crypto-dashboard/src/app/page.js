@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { getTopCoins } from "@/utils/api";
-import CoinCard from "@/components/CoinCard";
-import SearchBar from "@/components/SearchBar";
-import styles from "./globals.css";
+import { useEffect, useState } from 'react';
+import { getTopCoins } from '@/utils/api';
+import CoinCard from '@/components/CoinCard';
+import SearchBar from '@/components/SearchBar';
+import styles from './globals.css';
 
 export default function Home() {
   //Array of coins and updaters
   const [coins, setCoins] = useState([]);
   //loading state for waiting data
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
   //declare lastUpdate
   const [lastUpdated, setLastUpdated] = useState(null);
   const filteredCoins = coins.filter((coin) => {
@@ -28,7 +28,7 @@ export default function Home() {
       setCoins(data);
       setLastUpdated(new Date());
     } catch (error) {
-      console.error("Failed to fetch coins:", error);
+      console.error('Failed to fetch coins:', error);
     } finally {
       setLoading(false);
     }

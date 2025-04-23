@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./components.module.css";
-import MiniChart from "./MiniChart";
+import React from 'react';
+import styles from './components.module.css';
+import MiniChart from './MiniChart';
 
 function CoinCard({ coin }) {
   return (
