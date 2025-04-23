@@ -24,4 +24,11 @@ test("getTopCoins returns coin data", async () => {
   
     expect(data).toEqual(fakeCoins);
   });
+  //error case (api fail)
+  test("getTopCoins throws an error if request fails", async () => {
+    axios.get.mockRejectedValue(new Error("API Error"));
+  
+    await expect(getTopCoins()).rejects.toThrow("API Error");
+  });
+  
   
