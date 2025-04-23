@@ -7,12 +7,6 @@
     <br />
     <a href="https://github.com/valm10/crypto-dashboard"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="#">View Demo</a>
-    ·
-    <a href="https://github.com/valm10/crypto-dashboard/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/valm10/crypto-dashboard/issues">Request Feature</a>
   </p>
 </p>
 
@@ -20,7 +14,7 @@
 
 ## 📌 About The Project
 
-![Crypto Dashboard Screenshot](public/screenshot.png)
+![Crypto Dashboard Screenshot](.public/screenshot.png)
 
 The **Crypto Dashboard** is a real time web app that allows users to track the price, ranking, and market cap of cryptocurrencies using live data from CoinGecko. The interface is clean, responsive, and beginner-friendly.
 
@@ -61,15 +55,15 @@ To get a local copy up and running follow these simple steps.
 
 2. Install NPM packages
 
-```bash
-npm install
-```
+   ```bash
+   npm install
+   ```
 
 3. Run the app
 
-```bash
-npm run dev
-```
+   ```bash
+   npm run dev
+   ```
 
 ### 🧪 Testing
 
