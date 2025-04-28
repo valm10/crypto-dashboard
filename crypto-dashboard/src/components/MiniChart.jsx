@@ -1,6 +1,5 @@
-import React from 'react';
 import { Line } from 'react-chartjs-2';
-
+import PropTypes from 'prop-types';
 import {
   Chart as ChartJS,
   LineElement,
@@ -10,34 +9,35 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-//register needed chart parts
+
+// Register Chart.js components
 ChartJS.register(
   LineElement,
   PointElement,
   LinearScale,
   CategoryScale,
   Tooltip,
-  Legend,
+  Legend
 );
 
-function MiniChart({ sparkline }) {
-  //create fake x-axis labels
-  const labels = sparkline.map((_, i) => i);
-  //chart data configuration
+export default function MiniChart({ sparkline }) {
+  // Generate x-axis labels (indexes)
+  const labels = sparkline.map((_, index) => index);
+
   const data = {
     labels,
     datasets: [
       {
         label: '7d Price',
         data: sparkline,
-        borderColor: '#3b82f6', //blue line
+        borderColor: '#3b82f6',
         backgroundColor: 'transparent',
-        tension: 0.3, //line curved
-        pointRadius: 0, //hide points
+        tension: 0.3,
+        pointRadius: 0,
       },
     ],
   };
-  //chart appearance options
+
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -59,4 +59,6 @@ function MiniChart({ sparkline }) {
   );
 }
 
-export default MiniChart;
+MiniChart.propTypes = {
+  sparkline: PropTypes.arrayOf(PropTypes.number).isRequired,
+};
