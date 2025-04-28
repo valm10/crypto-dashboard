@@ -1,10 +1,10 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Home from '@/app/page';
+import userEvent from '@testing-library/user-event';
+import Home from '@/pages/page';
 import '@testing-library/jest-dom';
 
-//mock api response
-jest.mock('@/utils/api', () => ({
+// Mock api response
+jest.mock('@/services/api', () => ({
   getTopCoins: jest.fn(() =>
     Promise.resolve([
       {
@@ -20,24 +20,26 @@ jest.mock('@/utils/api', () => ({
         circulating_supply: 19000000,
         sparkline_in_7d: { price: [1, 2, 3] },
       },
-    ]),
+    ])
   ),
 }));
 
-test('shows loading state initially', () => {
-  render(<Home />);
-  expect(screen.getByText(/loading coins/i)).toBeInTheDocument();
-});
+describe('Home page', () => {
+  test('shows loading state initially', () => {
+    render(<Home />);
+    expect(screen.getByText(/loading coins/i)).toBeInTheDocument();
+  });
 
-test('renders coin card after data fetch', async () => {
-  render(<Home />);
-  const coinName = await screen.findByText(/Bitcoin/i);
-  expect(coinName).toBeInTheDocument();
-});
+  test('renders coin card after data fetch', async () => {
+    render(<Home />);
+    const coinName = await screen.findByText(/Bitcoin/i);
+    expect(coinName).toBeInTheDocument();
+  });
 
-test('filters coins when search term changes', async () => {
-  render(<Home />);
-  const input = await screen.findByPlaceholderText(/search coin/i);
-  await userEvent.type(input, 'bit');
-  expect(await screen.findByText(/Bitcoin/i)).toBeInTheDocument();
+  test('filters coins when search term changes', async () => {
+    render(<Home />);
+    const input = await screen.findByPlaceholderText(/search coin/i);
+    await userEvent.type(input, 'bit');
+    expect(await screen.findByText(/Bitcoin/i)).toBeInTheDocument();
+  });
 });
