@@ -1,17 +1,16 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import MiniChart from '../MiniChart';
+import { render, screen } from '@testing-library/react';
+import MiniChart from '../components/MiniChart';
 import '@testing-library/jest-dom';
 
-//mock of line component
+// Mock Line chart from react-chartjs-2
 jest.mock('react-chartjs-2', () => ({
   Line: () => <div>Mocked Line Chart</div>,
 }));
-//render test
+
 test('renders MiniChart with sparkline data', () => {
   const fakeSparkline = [1, 2, 3, 4, 5];
 
-  const { getByText } = render(<MiniChart sparkline={fakeSparkline} />);
+  render(<MiniChart sparkline={fakeSparkline} />);
 
-  expect(getByText('Mocked Line Chart')).toBeInTheDocument();
+  expect(screen.getByText('Mocked Line Chart')).toBeInTheDocument();
 });
