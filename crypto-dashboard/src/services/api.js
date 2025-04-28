@@ -1,29 +1,20 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://api.coingecko.com/api/v3';
-
-// Create pre-configured Axios instance
 const api = axios.create({
-  baseURL: BASE_URL,
+  baseURL: 'https://api.coingecko.com/api/v3',
 });
 
-export default api;
-
-// Fetch top 10 coins by market cap in EUR.
+// Get Top 10 coins by market cap in EUR
 export async function getTopCoins() {
-  try {
-    const response = await api.get('/coins/markets', {
-      params: {
-        vs_currency: 'eur',
-        order: 'market_cap_desc',
-        per_page: 10,
-        page: 1,
-        sparkline: true,
-      },
-    });
-    return response.data;
-  } catch (error) {
-    console.error('Error fetching top coins:', error);
-    throw error;
-  }
+  const response = await api.get('/coins/markets', {
+    params: {
+      vs_currency: 'eur',
+      order: 'market_cap_desc',
+      per_page: 10,
+      page: 1,
+      sparkline: true,
+    },
+  });
+
+  return response.data;
 }
