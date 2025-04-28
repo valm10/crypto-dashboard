@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import styles from '../styles/components.module.css';
 import MiniChart from './MiniChart';
+import React from 'react';
 
 export default function CoinCard({ coin }) {
   const {

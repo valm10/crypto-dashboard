@@ -1,5 +1,7 @@
 import { Line } from 'react-chartjs-2';
 import PropTypes from 'prop-types';
+import React from 'react';
+
 import {
   Chart as ChartJS,
   LineElement,
@@ -21,7 +23,7 @@ ChartJS.register(
 );
 
 export default function MiniChart({ sparkline }) {
-  // Generate x-axis labels (indexes)
+  // Generate x-axis labels 
   const labels = sparkline.map((_, index) => index);
 
   const data = {
