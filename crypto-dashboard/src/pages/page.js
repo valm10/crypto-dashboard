@@ -4,20 +4,16 @@ import { useEffect, useState } from "react";
 import { getTopCoins } from "@/services/api";
 import CoinCard from "@/components/CoinCard";
 import SearchBar from "@/components/SearchBar";
-import styles from "./globals.css";
+import styles from "../styles/Home.module.css"; // Corrected style import
 
 export default function Home() {
-  //array of coins and updaters
   const [coins, setCoins] = useState([]);
-  //shows "loading..." message until data is ready
   const [loading, setLoading] = useState(true);
-  //track whats typed in search bar
   const [searchTerm, setSearchTerm] = useState("");
-  //store last time data was refreshed
   const [lastUpdated, setLastUpdated] = useState(null);
-  //filter coins based on search
+
   const filteredCoins = coins.filter((coin) => {
-    const term = searchTerm.toLowerCase(); 
+    const term = searchTerm.toLowerCase();
     return (
       coin.name.toLowerCase().includes(term) ||
       coin.symbol.toLowerCase().includes(term)
@@ -27,19 +23,19 @@ export default function Home() {
   async function fetchCoins() {
     try {
       const data = await getTopCoins();
-      setCoins(data); //store data
-      setLastUpdated(new Date()); //store time
+      setCoins(data);
+      setLastUpdated(new Date());
     } catch (error) {
       console.error("Failed to fetch coins:", error);
     } finally {
-      setLoading(false); //turn off loading screen
+      setLoading(false);
     }
   }
 
   useEffect(() => {
     fetchCoins();
-    const interval = setInterval(fetchCoins, 60000); // auto-refresh 60s
-    return () => clearInterval(interval); //cleanup
+    const interval = setInterval(fetchCoins, 60000);
+    return () => clearInterval(interval);
   }, []);
 
   if (loading) {
@@ -47,22 +43,21 @@ export default function Home() {
   }
 
   return (
-    <main>
+    <main className={styles.main}>
       <h1>Crypto Dashboard</h1>
-      <div>
-        <button onClick={fetchCoins} className="refresh-button">
+      <div className={styles.refreshSection}>
+        <button onClick={fetchCoins} className={styles.refreshButton}>
           Refresh Coins
         </button>
 
         {lastUpdated && (
-          <span className="last-updated">
+          <span className={styles.lastUpdated}>
             Last Updated: {lastUpdated.toLocaleTimeString()}
           </span>
         )}
-        
       </div>
       <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
-      <div className="coin-grid">
+      <div className={styles.coinGrid}>
         {filteredCoins.map((coin) => (
           <CoinCard key={coin.id} coin={coin} />
         ))}
