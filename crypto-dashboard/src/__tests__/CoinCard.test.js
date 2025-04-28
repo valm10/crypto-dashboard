@@ -1,11 +1,10 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import CoinCard from '../CoinCard';
+import CoinCard from '../components/CoinCard';
 import '@testing-library/jest-dom';
 
-//minichart mock
-jest.mock('../MiniChart', () => () => <div data-testid="mock-chart" />);
-//coin fake + render
+// Mock MiniChart component
+jest.mock('../components/MiniChart', () => () => <div data-testid="mock-chart" />);
+
 describe('CoinCard component', () => {
   test('renders coin data correctly', () => {
     const fakeCoin = {
@@ -23,8 +22,9 @@ describe('CoinCard component', () => {
         price: [100, 200, 300, 400, 500],
       },
     };
-    //assert render for coincard
+
     render(<CoinCard coin={fakeCoin} />);
+
     expect(screen.getByText(/Bitcoin/i)).toBeInTheDocument();
     expect(screen.getByText(/\(BTC\)/i)).toBeInTheDocument();
     expect(screen.getByText(/Price: €50000/)).toBeInTheDocument();
