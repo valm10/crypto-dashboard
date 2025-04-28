@@ -1,23 +1,51 @@
-import React from 'react';
-import styles from './components.module.css';
+import PropTypes from 'prop-types';
+import styles from '../styles/components.module.css';
 import MiniChart from './MiniChart';
 
-function CoinCard({ coin }) {
+export default function CoinCard({ coin }) {
+  const {
+    image,
+    name,
+    symbol,
+    current_price,
+    price_change_percentage_24h,
+    market_cap,
+    total_volume,
+    market_cap_rank,
+    circulating_supply,
+    sparkline_in_7d,
+  } = coin;
+
   return (
     <div className={styles.card}>
-      <img src={coin.image} alt={coin.name} width={32} height={32} />
+      <img src={image} alt={name} width={32} height={32} />
       <h2>
-        {coin.name} ({coin.symbol.toUpperCase()})
+        {name} ({symbol.toUpperCase()})
       </h2>
-      <p>💰 Price: €{coin.current_price}</p>
-      <p>📈 24h Change: {coin.price_change_percentage_24h?.toFixed(2)}%</p>
-      <p>🏦 Market Cap: €{coin.market_cap.toLocaleString()}</p>
-      <p>🔁 Volume: €{coin.total_volume.toLocaleString()}</p>
-      <p>📊 Rank: #{coin.market_cap_rank}</p>
-      <p>🪙 Supply: {coin.circulating_supply.toLocaleString()}</p>
-      <MiniChart sparkline={coin.sparkline_in_7d.price} />
+      <p>💰 Price: €{current_price}</p>
+      <p>📈 24h Change: {price_change_percentage_24h?.toFixed(2)}%</p>
+      <p>🏦 Market Cap: €{market_cap.toLocaleString()}</p>
+      <p>🔁 Volume: €{total_volume.toLocaleString()}</p>
+      <p>📊 Rank: #{market_cap_rank}</p>
+      <p>🪙 Supply: {circulating_supply.toLocaleString()}</p>
+      {sparkline_in_7d?.price && <MiniChart sparkline={sparkline_in_7d.price} />}
     </div>
   );
 }
 
-export default CoinCard;
+CoinCard.propTypes = {
+  coin: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    symbol: PropTypes.string.isRequired,
+    current_price: PropTypes.number.isRequired,
+    price_change_percentage_24h: PropTypes.number,
+    market_cap: PropTypes.number.isRequired,
+    total_volume: PropTypes.number.isRequired,
+    market_cap_rank: PropTypes.number.isRequired,
+    circulating_supply: PropTypes.number.isRequired,
+    sparkline_in_7d: PropTypes.shape({
+      price: PropTypes.arrayOf(PropTypes.number),
+    }),
+  }).isRequired,
+};
