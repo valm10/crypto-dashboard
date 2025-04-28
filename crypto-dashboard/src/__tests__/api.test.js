@@ -1,27 +1,25 @@
-import axios from 'axios';
-import { getTopCoins } from '@/services/api';
-import '@testing-library/jest-dom';
+import api, { getTopCoins } from '@/services/api';
 
-jest.mock('axios', () => {
-  const originalModule = jest.requireActual('axios');
+// Mock the api instance
+jest.mock('@/services/api', () => {
+  const originalModule = jest.requireActual('@/services/api');
   return {
+    __esModule: true,
     ...originalModule,
-    create: () => ({
+    default: {
       get: jest.fn(),
-    }),
+    },
   };
 });
 
-//correct case
-test('getTopCoins returns coin data', async () => {
-  const fakeCoins = [{ id: 'bitcoin', name: 'Bitcoin' }];
-  axios.get.mockResolvedValue({ data: fakeCoins });
+describe('getTopCoins', () => {
+  test('returns coin data successfully', async () => {
+    const fakeCoins = [{ id: 'bitcoin', name: 'Bitcoin' }];
+    api.get.mockResolvedValue({ data: fakeCoins });
 
-  const data = await getTopCoins();
+    const data = await getTopCoins();
 
-  expect(axios.get).toHaveBeenCalledWith(
-    'https://api.coingecko.com/api/v3/coins/markets',
-    {
+    expect(api.get).toHaveBeenCalledWith('/coins/markets', {
       params: {
         vs_currency: 'eur',
         order: 'market_cap_desc',
@@ -29,13 +27,12 @@ test('getTopCoins returns coin data', async () => {
         page: 1,
         sparkline: true,
       },
-    },
-  );
+    });
+    expect(data).toEqual(fakeCoins);
+  });
 
-  expect(data).toEqual(fakeCoins);
-});
-//error case (api fail)
-test('getTopCoins throws an error if request fails', async () => {
-  axios.get.mockRejectedValue(new Error('API Error'));
-  await expect(getTopCoins()).rejects.toThrow('API Error');
+  test('throws an error if API request fails', async () => {
+    api.get.mockRejectedValue(new Error('API Error'));
+    await expect(getTopCoins()).rejects.toThrow('API Error');
+  });
 });
