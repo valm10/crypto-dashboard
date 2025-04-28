@@ -1,26 +1,26 @@
-import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import SearchBar from '../SearchBar';
+import SearchBar from '../components/SearchBar';
 import '@testing-library/jest-dom';
 
-//render and check if input is on the screen
+// Test if input renders
 test('renders the search input', () => {
   render(<SearchBar searchTerm="" onSearchChange={() => {}} />);
   const input = screen.getByPlaceholderText(/search coin/i);
   expect(input).toBeInTheDocument();
 });
-//simulate typing in input
+
+// Test typing event
 test('calls onSearchChange when input changes', () => {
   const mockHandler = jest.fn();
 
   render(<SearchBar searchTerm="" onSearchChange={mockHandler} />);
-
   const input = screen.getByPlaceholderText(/search coin/i);
-  fireEvent.change(input, { target: { value: 'bitcoin' } });
 
+  fireEvent.change(input, { target: { value: 'bitcoin' } });
   expect(mockHandler).toHaveBeenCalledWith('bitcoin');
 });
-//check initial value
+
+// Test initial input value
 test('input displays the current searchTerm', () => {
   render(<SearchBar searchTerm="eth" onSearchChange={() => {}} />);
   const input = screen.getByPlaceholderText(/search coin/i);
