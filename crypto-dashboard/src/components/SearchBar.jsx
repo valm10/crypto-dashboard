@@ -1,6 +1,8 @@
+"use client";
+
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles/components.module.css';
-import React from 'react';
 
 export default function SearchBar({ searchTerm, onSearchChange }) {
   return (
