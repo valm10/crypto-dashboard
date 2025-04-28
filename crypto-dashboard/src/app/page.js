@@ -1,7 +1,6 @@
 "use client";
 
-import React from 'react';
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getTopCoins } from "@/services/api";
 import CoinCard from "@/components/CoinCard";
 import SearchBar from "@/components/SearchBar";
@@ -10,6 +9,7 @@ import styles from "../styles/globals.css";
 export default function Home() {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [lastUpdated, setLastUpdated] = useState(null);
 
@@ -26,8 +26,10 @@ export default function Home() {
       const data = await getTopCoins();
       setCoins(data);
       setLastUpdated(new Date());
+      setError(false); // clear any previous errors
     } catch (error) {
       console.error("Failed to fetch coins:", error);
+      setError(true); // set error if fetching fails
     } finally {
       setLoading(false);
     }
@@ -35,12 +37,21 @@ export default function Home() {
 
   useEffect(() => {
     fetchCoins();
-    const interval = setInterval(fetchCoins, 60000);
+    const interval = setInterval(fetchCoins, 60000); // refresh every 60 seconds
     return () => clearInterval(interval);
   }, []);
 
   if (loading) {
     return <p>Loading coins...</p>;
+  }
+
+  if (error) {
+    return (
+      <div className="error-message">
+        <p>🚨 Failed to load coins. Please try refreshing.</p>
+        <button onClick={fetchCoins}>Retry</button>
+      </div>
+    );
   }
 
   return (
