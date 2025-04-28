@@ -1,21 +1,23 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { getTopCoins } from '@/utils/api';
-import CoinCard from '@/components/CoinCard';
-import SearchBar from '@/components/SearchBar';
-import styles from './globals.css';
+import { useEffect, useState } from "react";
+import { getTopCoins } from "@/services/api";
+import CoinCard from "@/components/CoinCard";
+import SearchBar from "@/components/SearchBar";
+import styles from "./globals.css";
 
 export default function Home() {
-  //Array of coins and updaters
+  //array of coins and updaters
   const [coins, setCoins] = useState([]);
-  //loading state for waiting data
+  //shows "loading..." message until data is ready
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState('');
-  //declare lastUpdate
+  //track whats typed in search bar
+  const [searchTerm, setSearchTerm] = useState("");
+  //store last time data was refreshed
   const [lastUpdated, setLastUpdated] = useState(null);
+  //filter coins based on search
   const filteredCoins = coins.filter((coin) => {
-    const term = searchTerm.toLowerCase();
+    const term = searchTerm.toLowerCase(); 
     return (
       coin.name.toLowerCase().includes(term) ||
       coin.symbol.toLowerCase().includes(term)
@@ -25,20 +27,18 @@ export default function Home() {
   async function fetchCoins() {
     try {
       const data = await getTopCoins();
-      setCoins(data);
-      setLastUpdated(new Date());
+      setCoins(data); //store data
+      setLastUpdated(new Date()); //store time
     } catch (error) {
-      console.error('Failed to fetch coins:', error);
+      console.error("Failed to fetch coins:", error);
     } finally {
-      setLoading(false);
+      setLoading(false); //turn off loading screen
     }
   }
 
   useEffect(() => {
     fetchCoins();
-
-    //60 seconds interval
-    const interval = setInterval(fetchCoins, 60000);
+    const interval = setInterval(fetchCoins, 60000); // auto-refresh 60s
     return () => clearInterval(interval); //cleanup
   }, []);
 
@@ -59,6 +59,7 @@ export default function Home() {
             Last Updated: {lastUpdated.toLocaleTimeString()}
           </span>
         )}
+        
       </div>
       <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
       <div className="coin-grid">

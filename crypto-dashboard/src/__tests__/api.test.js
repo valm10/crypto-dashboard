@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getTopCoins } from '@/utils/api';
+import { getTopCoins } from '@/services/api';
 import '@testing-library/jest-dom';
 
 jest.mock('axios', () => {
