@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import MiniChart from '../components/MiniChart';
+import MiniChart from '../MiniChart';
 import '@testing-library/jest-dom';
 
 // Mock Line chart from react-chartjs-2

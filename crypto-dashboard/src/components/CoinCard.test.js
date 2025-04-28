@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import CoinCard from '../components/CoinCard';
+import CoinCard from '../CoinCard';
 import '@testing-library/jest-dom';
 
 // Mock MiniChart component
