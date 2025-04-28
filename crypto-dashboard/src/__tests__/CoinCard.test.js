@@ -3,7 +3,12 @@ import CoinCard from '../components/CoinCard';
 import '@testing-library/jest-dom';
 
 // Mock MiniChart component
-jest.mock('../components/MiniChart', () => () => <div data-testid="mock-chart" />);
+jest.mock('../components/MiniChart', () => {
+  const MockMiniChart = () => <div data-testid="mock-chart" />;
+  MockMiniChart.displayName = 'MockMiniChart';
+  return MockMiniChart;
+});
+
 
 describe('CoinCard component', () => {
   test('renders coin data correctly', () => {

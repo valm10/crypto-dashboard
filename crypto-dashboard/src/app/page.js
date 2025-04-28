@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { getTopCoins } from "@/services/api";
 import CoinCard from "@/components/CoinCard";
 import SearchBar from "@/components/SearchBar";
-import styles from "../styles/Home.module.css"; // Corrected style import
+import styles from "../styles/globals.css";
 
 export default function Home() {
   const [coins, setCoins] = useState([]);
@@ -43,21 +43,21 @@ export default function Home() {
   }
 
   return (
-    <main className={styles.main}>
+    <main>
       <h1>Crypto Dashboard</h1>
-      <div className={styles.refreshSection}>
-        <button onClick={fetchCoins} className={styles.refreshButton}>
+      <div>
+        <button onClick={fetchCoins} className="refresh-button">
           Refresh Coins
         </button>
 
         {lastUpdated && (
-          <span className={styles.lastUpdated}>
+          <span className="last-updated">
             Last Updated: {lastUpdated.toLocaleTimeString()}
           </span>
         )}
       </div>
       <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
-      <div className={styles.coinGrid}>
+      <div className="coin-grid">
         {filteredCoins.map((coin) => (
           <CoinCard key={coin.id} coin={coin} />
         ))}
