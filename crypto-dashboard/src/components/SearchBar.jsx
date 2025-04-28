@@ -1,11 +1,9 @@
-import React from 'react';
-import styles from './components.module.css';
+import PropTypes from 'prop-types';
+import styles from '../styles/components.module.css';
 
-//search input to filter coins
-function SearchBar({ searchTerm, onSearchChange }) {
+export default function SearchBar({ searchTerm, onSearchChange }) {
   return (
     <div>
-      <label htmlFor="search" className={styles.searchLabel}></label>
       <input
         id="search"
         type="text"
@@ -13,9 +11,12 @@ function SearchBar({ searchTerm, onSearchChange }) {
         className={styles.searchInput}
         value={searchTerm}
         onChange={(e) => onSearchChange(e.target.value)}
-      ></input>
+      />
     </div>
   );
 }
 
-export default SearchBar;
+SearchBar.propTypes = {
+  searchTerm: PropTypes.string.isRequired,
+  onSearchChange: PropTypes.func.isRequired,
+};
