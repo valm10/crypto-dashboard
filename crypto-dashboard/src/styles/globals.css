@@ -1,45 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
-}
-
-.coin-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  padding-top: 1rem;
-}
-
-h1 {
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  text-transform: uppercase;
-}
-
-.refresh-button {
-  padding: 0.5rem;
-  margin-right: 3.1rem;
-  margin-bottom: 1rem;
-  background-color: #696f76;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background-color 0.2s ease;
-}
-
-.refresh-bar {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.refresh-button:hover {
-  background-color: #0059c1;
-}
-
-.last-updated {
-  font-size: 0.85rem;
-  color: #666;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
 }

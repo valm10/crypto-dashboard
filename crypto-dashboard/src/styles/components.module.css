@@ -6,6 +6,7 @@
   max-width: 400px;
   font-family: 'Roboto', sans-serif;
 }
+
 .searchInput {
   padding: 0.5rem;
   border-radius: 4px;
@@ -22,4 +23,50 @@
   margin-bottom: 0.5rem;
   font-weight: 500;
   font-size: 0.9rem;
+}
+
+.pageContainer {
+  padding: 1rem;
+}
+
+.title {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+}
+
+.refreshBar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.coinGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+
+.refreshButton {
+  padding: 0.5rem;
+  margin-right: 3.1rem;
+  margin-bottom: 1rem;
+  background-color: #696f76;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.refreshButton:hover {
+  background-color: #0059c1;
+}
+
+.lastUpdated {
+  font-size: 0.85rem;
+  color: #666;
 }

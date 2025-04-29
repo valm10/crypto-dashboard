@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import PropTypes from 'prop-types';
 
@@ -14,7 +14,6 @@ import {
   Legend,
 } from 'chart.js';
 
-// Register components
 ChartJS.register(
   LineElement,
   PointElement,
@@ -23,10 +22,19 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
 // Shows the 7-day chart for a coin
 export default function MiniChart({ sparkline }) {
-  const labels = sparkline.map((_, index) => index); // create labels
+  const chartRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (chartRef.current) {
+        chartRef.current.destroy();
+      }
+    };
+  }, []);
+
+  const labels = sparkline.map((_, index) => index);
 
   const data = {
     labels,
@@ -58,11 +66,10 @@ export default function MiniChart({ sparkline }) {
 
   return (
     <div style={{ height: '50px', width: '100%' }}>
-      <Line data={data} options={options} />
+      <Line ref={chartRef} data={data} options={options} />
     </div>
   );
 }
-
 // PropTypes validation
 MiniChart.propTypes = {
   sparkline: PropTypes.arrayOf(PropTypes.number).isRequired,
