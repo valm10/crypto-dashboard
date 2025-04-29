@@ -20,11 +20,12 @@ The **Crypto Dashboard** is a real time web app that allows users to track the p
 
 ### ✅ Features
 
-- Real-time cryptocurrency tracking
-- Search functionality
-- Responsive and modern UI
-- Clean project structure and reusable components
-- Unit tested components with Jest
+- Live top 10 cryptocurrency data
+- Filtering by coin name or symbol
+- Mini trend charts for each coin (7-day)
+- Auto-refresh every 60 seconds
+- Manual refresh and error handling with retry option
+- Fully tested (unit and error handling)
 
 ### 🛠️ Built With
 
