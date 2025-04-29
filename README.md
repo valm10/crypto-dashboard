@@ -16,7 +16,7 @@
 
 ![Crypto Dashboard Screenshot](/crypto-dashboard/public/screenshot.png)
 
-The **Crypto Dashboard** is a real time web app that allows users to track the price, ranking, and market cap of cryptocurrencies using live data from CoinGecko. The interface is clean, responsive, and beginner-friendly.
+The **Crypto Dashboard** is a real time web app that allows users to track the price, ranking, and market cap of cryptocurrencies using live data from CoinGecko. The interface is clean, responsive.
 
 ### ✅ Features
 
@@ -24,7 +24,7 @@ The **Crypto Dashboard** is a real time web app that allows users to track the p
 - Filtering by coin name or symbol
 - Mini trend charts for each coin (7-day)
 - Auto-refresh every 60 seconds
-- Manual refresh and error handling with retry option
+- Manual refresh
 - Fully tested (unit and error handling)
 
 ### 🛠️ Built With
@@ -74,22 +74,12 @@ To run unit tests:
 npm run test
 ```
 
-### 📈 Roadmap
-
-- Live price tracking
-
-- Chart integration with historical data
-
-- User customization for favorite coins/upcoming
-
-- Dark mode toggle/upcoming
-
 ### 📜License
 
 Distributed under the MIT License. See LICENSE for more information.
 
 ### 🙋‍♂️ Contact
 
-Your Name – @valm10 – your.email@example.com
+Vitor Lopes – @valm10 – vitorlopesmed@gmail.com
 
 Project Link: https://github.com/valm10/crypto-dashboard
