@@ -2,7 +2,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import React from 'react';
-
+import PropTypes from 'prop-types'; // ✅ Import PropTypes
 
 export const metadata = {
   title: 'Crypto Dashboard',
@@ -16,3 +16,7 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+RootLayout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
