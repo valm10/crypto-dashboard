@@ -12,30 +12,29 @@ export default function Home() {
   const [error, setError] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Fetch top coins when the component mounts
-  useEffect(() => {
-    const fetchCoins = async () => {
-      try {
-        const data = await getTopCoins();
-        setCoins(data);
-      } catch (err) {
-        setError(true);
-      } finally {
-        setLoading(false);
-      }
-    };
+  // Fetch top coins from API
+  const fetchCoins = async () => {
+    try {
+      setLoading(true);
+      const data = await getTopCoins();
+      setCoins(data);
+      setError(false);
+    } catch (err) {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchCoins();
   }, []);
 
-  // Filter coins by name or symbol
-  const filteredCoins = coins.filter(coin => {
-    const term = searchTerm.toLowerCase();
-    return (
-      coin.name.toLowerCase().includes(term) ||
-      coin.symbol.toLowerCase().includes(term)
-    );
-  });
+  // Filter coins by search term
+  const filteredCoins = coins.filter(coin =>
+    coin.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    coin.symbol.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Failed to fetch coins.</div>;
@@ -46,6 +45,9 @@ export default function Home() {
 
       <div className={styles.refreshBar}>
         <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+        <button className={styles.refreshButton} onClick={fetchCoins}>
+          Refresh
+        </button>
       </div>
 
       <div className={styles.coinGrid}>
