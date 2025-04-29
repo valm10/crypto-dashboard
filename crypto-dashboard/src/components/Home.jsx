@@ -28,10 +28,14 @@ export default function Home() {
     fetchCoins();
   }, []);
 
-  // Filter coins by search term
-  const filteredCoins = coins.filter(coin =>
-    coin.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Filter coins by name or symbol
+  const filteredCoins = coins.filter(coin => {
+    const term = searchTerm.toLowerCase();
+    return (
+      coin.name.toLowerCase().includes(term) ||
+      coin.symbol.toLowerCase().includes(term)
+    );
+  });
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Failed to fetch coins.</div>;
