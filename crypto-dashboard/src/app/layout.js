@@ -1,8 +1,6 @@
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
 import React from 'react';
-import PropTypes from 'prop-types'; // ✅ Import PropTypes
+import '@fontsource/roboto';
+import PropTypes from 'prop-types'; 
 
 export const metadata = {
   title: 'Crypto Dashboard',

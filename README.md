@@ -74,10 +74,6 @@ To run unit tests:
 npm run test
 ```
 
-### 📜License
-
-Distributed under the MIT License. See LICENSE for more information.
-
 ### 🙋‍♂️ Contact
 
 Vitor Lopes – @valm10 – vitorlopesmed@gmail.com
