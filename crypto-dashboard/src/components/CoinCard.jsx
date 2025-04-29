@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import styles from '../styles/components.module.css';
 import MiniChart from './MiniChart';
 
-// CoinCard component: displays coin information + mini chart
+// Displays coin information + mini chart
 export default function CoinCard({ coin }) {
   const {
     image,
@@ -32,7 +32,6 @@ export default function CoinCard({ coin }) {
       <p>🔁 Volume: €{total_volume.toLocaleString()}</p>
       <p>📊 Rank: #{market_cap_rank}</p>
       <p>🪙 Supply: {circulating_supply.toLocaleString()}</p>
-      {/* Display the 7d sparkline chart if available */}
       {sparkline_in_7d?.price && <MiniChart sparkline={sparkline_in_7d.price} />}
     </div>
   );

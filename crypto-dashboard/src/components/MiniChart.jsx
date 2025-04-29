@@ -14,7 +14,7 @@ import {
   Legend,
 } from 'chart.js';
 
-// Register Chart.js components only once
+// Register components
 ChartJS.register(
   LineElement,
   PointElement,
@@ -24,9 +24,9 @@ ChartJS.register(
   Legend
 );
 
-// MiniChart component: shows the 7-day chart for a coin
+// Shows the 7-day chart for a coin
 export default function MiniChart({ sparkline }) {
-  const labels = sparkline.map((_, index) => index); // create simple labels (0,1,2...)
+  const labels = sparkline.map((_, index) => index); // create labels
 
   const data = {
     labels,

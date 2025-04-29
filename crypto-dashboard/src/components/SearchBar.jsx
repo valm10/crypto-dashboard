@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles/components.module.css';
 
-// SearchBar component: controlled input for searching coins
+// Input for searching coins
 export default function SearchBar({ searchTerm, onSearchChange }) {
   return (
     <div className={styles.searchContainer}>
